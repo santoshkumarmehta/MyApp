@@ -1,0 +1,38 @@
+
+  <div class="container jumbotron">
+   
+<div class="col-md-6 offset-sm-3">
+    <h4>Currency Converter</h4>
+
+    <table>
+      <tr>
+        <td><input type="number" id="fromAmmount"   name="abc" [(ngModel)]="abc"></td>
+        <td>
+          <select id="yyy" #yyy="ngModel"  [(ngModel)]="abc1" name="abc1" (ngModelChange)="currencyConverter($event);">  
+               
+                <option  [ngValue]="currency1.id" *ngFor="let currency1 of currencyType;">  
+                 {{currency1.cname}}  
+                </option> 
+       </select>  
+        </td>
+      </tr>
+      
+      <p>Convert In</p>
+     
+      <tr>
+          <td><input type="number" id="toAccount" value="{{result}}" name="toAmmount"[(ngModel)]="toAmmount" disabled ></td>
+       
+          <td>
+              <select  id="cto" #cto="ngModel"  [(ngModel)]="ctoc" name="ctoc" (ngModelChange)="currencyConverter($event);">
+                  <option [ngValue]="currency1.id" *ngFor="let currency1 of currencyType; "> {{currency1.cname}}</option>
+                  
+              </select>
+          </td>
+        
+      </tr>
+    </table>
+         
+
+  </div>
+</div>
+

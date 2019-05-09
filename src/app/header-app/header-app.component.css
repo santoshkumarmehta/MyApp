@@ -1,0 +1,18 @@
+a{
+    margin-top: 5%;
+    
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+.header{
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: rgb(8, 0, 0);
+}
+p{
+    text-align: left;
+}

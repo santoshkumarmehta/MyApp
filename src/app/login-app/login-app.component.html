@@ -1,0 +1,50 @@
+<div class="container-fluid jumbotron">
+    
+    <div class="col-md-6 offset-md-3">
+      <div>
+          <button id="btn1" class="btn btn-lg btn-primary" (click)="socialLogin('facebook')">Log in with Facebook</button> 
+          <button id="btn2" class="btn btn-lg " (click)="socialLogin('google')">Log in with Google</button>           
+          
+      </div>
+        <hr>
+      <form  class="well" [formGroup]="loginForm">
+        <fieldset>
+           <h4>Login Here</h4>
+        <hr>
+            <div class="form-group">
+            <label for="name">Entere Email</label>
+            <input type="email" class="form-control" #txtemail formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="name">Enter Password </label>
+            <input type="password" id="password" class="form-control" #txtpassword formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+            
+          </div>
+          </div>
+          <div class="form-group form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember"> Remember me
+            </label>
+          </div>
+          <div class="form-group">
+              &nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" class="btn btn-md btn-primary" value="Submit" (click)="onSubmit();sendData(txtemail.value, txtpassword.value)">&nbsp;&nbsp;
+            <input type="reset" class="btn btn-md btn-info " value="Reset" name="name">
+          </div>
+        </fieldset>
+        <div> 
+            <a routerLink="/registration">Registration</a><br><br>
+            <a routerLink="/forgotpassword">Forgot Password</a>
+        </div>
+      </form>
+    </div>
+ <!--<div>
+  <button (click)="socialLogin('facebook')">Log in with Facebook</button>
+  <button (click)="socialLogin('google')">Log in with Google</button>     </div>-->      
+
+</div>

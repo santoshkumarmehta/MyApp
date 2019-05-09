@@ -1,0 +1,14 @@
+.navbar{
+    margin-top:10px;
+    /* margin-right: 1%; */
+    /* margin-left: 1%; */
+    text-decoration: none;
+    text-decoration-color: white;
+}
+  .page-header{
+    background-color: darkkhaki;
+    height: 30px;;
+  }
+  .hover{
+    background-color: green;
+  }
